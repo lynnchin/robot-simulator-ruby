@@ -16,11 +16,10 @@ describe 'SquareTable' do
   end
 
   describe '#columns' do
-    it { expect(table.rows).to eq 5 }
+    it { expect(table.columns).to eq 5 }
   end
 
-  describe '#check_position?' do
-
+  describe '#check_position' do
     context 'when input position is outside the table range' do
        it { expect(table.check_position(-1,1)).to eq false }
     end
