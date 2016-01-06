@@ -1,0 +1,39 @@
+AllCops:
+  UseCache: false # There is a bug where the cache files can't be written in version 0.34.0
+  RunRailsCops: true
+  Include:
+    - '**/Gemfile'
+  Exclude:
+   - 'bin/*'
+   - 'spec/spec_helper.rb'
+
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 15
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/ExtraSpacing:
+  Enabled: false
+
+Style/GlobalVars:
+  Enabled: false
+
+Style/IndentHash:
+  Enabled: false
+
+Style/MultilineOperationIndentation:
+  Enabled: false
+
+Style/TrivialAccessors:
+  Enabled: false
+
