@@ -4,7 +4,7 @@ class Position
     @y_coordinate = y
   end
 
-  def display
+  def to_s
     @x_coordinate.to_s + ',' + @y_coordinate.to_s
   end
 

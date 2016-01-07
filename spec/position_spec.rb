@@ -10,9 +10,9 @@ describe 'Position' do
     end
   end
 
-  describe '#display' do
+  describe '#to_s' do
     it 'displays the coordinate of position' do
-      expect(subject.display).to eq '0,0'
+      expect(subject.to_s).to eq '0,0'
     end
   end
 

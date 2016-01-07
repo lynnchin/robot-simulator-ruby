@@ -5,21 +5,25 @@ class SquareTable
     @position = nil
   end
 
-  def place(new_position)
-    @position = new_position if valid_position(new_position)
+  def place(x_coordinate,y_coordinate)
+    @position = Position.new(x_coordinate,y_coordinate) if valid_position(x_coordinate,y_coordinate)
   end
 
   def placed?
     @position.nil? ? false : true
   end
 
-  def valid_position(new_position)
-    if (new_position.x_coordinate < 0 || new_position.x_coordinate > rows) ||
-        (new_position.y_coordinate < 0 || new_position.y_coordinate > columns)
+  def valid_position(x_coordinate,y_coordinate)
+    if (x_coordinate < 0 || x_coordinate > rows) ||
+        (y_coordinate < 0 || y_coordinate > columns)
       false
     else
       true
     end
+  end
+
+  def position_to_s
+    @position.to_s
   end
 
   attr_reader :rows, :columns, :position

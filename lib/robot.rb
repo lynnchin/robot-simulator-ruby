@@ -1,9 +1,8 @@
 class Robot
-  attr_reader :orientation, :directions
+  attr_reader :directions, :orientation
 
   def initialize
     @orientation = nil
-    @position = nil
     @directions = [:north, :east, :south, :west]
   end
 
@@ -23,11 +22,12 @@ class Robot
     end
   end
 
-  def orientation=(new_orientation)
+  def set_orientation(new_orientation)
     if @directions.include?(new_orientation)
       @orientation = new_orientation
     else
-      fail 'Invalid orientation #{new_orientation}'
+      raise 'Invalid orientation #{new_orientation}'
+      nil
     end
   end
 
