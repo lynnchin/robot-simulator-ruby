@@ -3,13 +3,24 @@ Robot Simulator
 
 ## Run instructions
 
-Please make sure the following command is executed to run the test cases:
+Run the program with command below:
 
+```
+ruby robot_simulator.rb
+```
+
+Or you can also run it with the following command with sample data file (command.txt):
+
+```
+cat command.txt | ruby robot_simulator.rb
+```
+
+You can either run the Rspec tests (with test coverage included) with command below:
+
+```
 bundle install
-
-rubocop
-
-bundle exec rspec spec (This command will also generates code coverage for this project)
+bundle exec rspec spec
+```
 
 ## Specification
 
@@ -20,6 +31,8 @@ Please find the gems that I have used while working on this project:
 - Rubocop - Static code analyser and checker which checks against the Ruby coding style.
 - Rspec - BDD Test Framework for Ruby
 - Simplecov - Code coverage tool for Ruby
+
+Please refer to file command.txt for sample test data.
 
 ## Description: 
 
