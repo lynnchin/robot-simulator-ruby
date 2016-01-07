@@ -37,3 +37,5 @@ Style/MultilineOperationIndentation:
 Style/TrivialAccessors:
   Enabled: false
 
+Lint/AmbiguousOperator:
+  Enabled: false
