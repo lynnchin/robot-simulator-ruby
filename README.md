@@ -22,6 +22,13 @@ bundle install
 bundle exec rspec spec
 ```
 
+I have also included Rubocop gem to ensure the source code meets the Ruby coding standards.
+Please run the following command to check for styles:
+
+```
+rubocop
+```
+
 ## Specification
 
 This program is written and executed with Ruby version 2-2-3p173
