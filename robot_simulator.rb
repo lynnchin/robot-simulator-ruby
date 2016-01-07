@@ -11,5 +11,5 @@ simulator = Simulator.new
 
 while command_line = STDIN.gets
   output = simulator.execute(command_line)
-  puts output if command_line.chomp() == 'REPORT'
+  puts output if command_line.chomp == 'REPORT'
 end

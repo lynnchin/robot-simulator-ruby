@@ -39,3 +39,6 @@ Style/TrivialAccessors:
 
 Lint/AmbiguousOperator:
   Enabled: false
+
+Lint/AssignmentInCondition:
+  Enabled: false

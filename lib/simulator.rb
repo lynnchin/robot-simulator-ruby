@@ -80,14 +80,14 @@ class Simulator
   private
 
   def move_position(x_value, y_value, table)
-    new_position = Position.new(x_value,y_value)
+    new_position = Position.new(x_value, y_value)
     fail 'Invalid move in position.' unless table.valid_position(new_position)
     table.update(new_position)
   end
 
   def place_robot(x_coordinate, y_coordinate, orientation)
-    @table.place Position.new(x_coordinate,y_coordinate)
+    @table.place Position.new(x_coordinate, y_coordinate)
     fail 'Fail to place robot. Invalid position.' unless @table.placed?
-    @robot.set_orientation orientation
+    @robot.update_direction orientation
   end
 end

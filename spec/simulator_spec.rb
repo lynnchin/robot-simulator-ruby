@@ -4,7 +4,6 @@ require_relative '../lib/square_table'
 require_relative '../lib/simulator'
 
 describe 'Simulator' do
-
   let(:simulator) { Simulator.new }
 
   let(:table) { double 'table' }
@@ -123,19 +122,19 @@ describe 'Simulator' do
       end
 
       it 'change the direction to south' do
-        simulator.robot.set_orientation :west
+        simulator.robot.update_direction :west
         simulator.execute('LEFT')
         expect(simulator.robot.orientation).to eq :south
       end
 
       it 'change the direction to east' do
-        simulator.robot.set_orientation :south
+        simulator.robot.update_direction :south
         simulator.execute('LEFT')
         expect(simulator.robot.orientation).to eq :east
       end
 
       it 'change the direction to south' do
-        simulator.robot.set_orientation :east
+        simulator.robot.update_direction :east
         simulator.execute('LEFT')
         expect(simulator.robot.orientation).to eq :north
       end
@@ -153,19 +152,19 @@ describe 'Simulator' do
       end
 
       it 'change the direction to south' do
-        simulator.robot.set_orientation :east
+        simulator.robot.update_direction :east
         simulator.execute('RIGHT')
         expect(simulator.robot.orientation).to eq :south
       end
 
       it 'change the direction to east' do
-        simulator.robot.set_orientation :south
+        simulator.robot.update_direction :south
         simulator.execute('RIGHT')
         expect(simulator.robot.orientation).to eq :west
       end
 
       it 'change the direction to south' do
-        simulator.robot.set_orientation :west
+        simulator.robot.update_direction :west
         simulator.execute('RIGHT')
         expect(simulator.robot.orientation).to eq :north
       end

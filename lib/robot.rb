@@ -22,13 +22,13 @@ class Robot
     end
   end
 
-  def set_orientation(new_orientation)
+  def update_direction(new_orientation)
     if @directions.include?(new_orientation)
       @orientation = new_orientation
     else
-      raise 'Invalid orientation #{new_orientation}'
-      nil
+      fail 'Invalid orientation #{new_orientation}'
     end
+    nil
   end
 
   def to_s

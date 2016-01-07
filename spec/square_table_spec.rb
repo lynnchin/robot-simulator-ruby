@@ -6,8 +6,8 @@ describe 'SquareTable' do
   let(:table) { SquareTable.new(5, 5) }
 
   let(:position) { double('position') }
-  let(:valid_position) { Position.new(1,1) }
-  let(:invalid_position) { Position.new(6,6) }
+  let(:valid_position) { Position.new(1, 1) }
+  let(:invalid_position) { Position.new(6, 6) }
 
   describe '#new' do
     it 'create an instance of SquareTable' do
@@ -74,7 +74,7 @@ describe 'SquareTable' do
   describe '#position_to_s' do
     before { table.place(valid_position) }
     it 'displays coordinate in x,y format' do
-        expect(table.position_to_s).to eq '1,1'
+      expect(table.position_to_s).to eq '1,1'
     end
   end
 end

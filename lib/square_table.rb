@@ -27,7 +27,7 @@ class SquareTable
   end
 
   def update(position)
-    @position.update(position.x_coordinate,position.y_coordinate) if valid_position(position)
+    @position.update(position.x_coordinate, position.y_coordinate) if valid_position(position)
   end
 
   attr_reader :rows, :columns, :position
