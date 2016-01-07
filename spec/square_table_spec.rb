@@ -6,6 +6,8 @@ describe 'SquareTable' do
   let(:table) { SquareTable.new(5, 5) }
 
   let(:position) { double('position') }
+  let(:valid_position) { Position.new(1,1) }
+  let(:invalid_position) { Position.new(6,6) }
 
   describe '#new' do
     it 'create an instance of SquareTable' do
@@ -23,24 +25,24 @@ describe 'SquareTable' do
 
   describe '#valid_position' do
     context 'when input position is outside the table range' do
-      it { expect(table.valid_position(6, 6)).to eq false }
+      it { expect(table.valid_position(invalid_position)).to eq false }
     end
 
     context 'when input position is within the table range' do
-      it { expect(table.valid_position(0, 0)).to eq true }
+      it { expect(table.valid_position(valid_position)).to eq true }
     end
   end
 
   describe '#place' do
     context 'when a robot is placed on on the table' do
       it 'has a valid position' do
-        table.place(0, 0)
-        expect(table.position.x_coordinate).to eq 0
-        expect(table.position.y_coordinate).to eq 0
+        table.place(valid_position)
+        expect(table.position.x_coordinate).to eq 1
+        expect(table.position.y_coordinate).to eq 1
       end
 
       it 'has not being placed' do
-        table.place(6, 6)
+        table.place(invalid_position)
         expect(table.position).to eq nil
       end
     end
@@ -48,21 +50,21 @@ describe 'SquareTable' do
 
   describe '#placed?' do
     context 'when position is not being set' do
-      before { table.place(6, 6) }
+      before { table.place(invalid_position) }
       it 'returns false' do
         expect(table.placed?).to be false
       end
     end
 
     context 'when robot is being placed on table' do
-      before { table.place(0, 0) }
+      before { table.place(valid_position) }
       it 'returns true' do
         expect(table.placed?).to be true
       end
     end
 
     context 'when robot is being placed on table' do
-      before { table.place(4, 2) }
+      before { table.place(valid_position) }
       it 'returns true' do
         expect(table.placed?).to be true
       end
@@ -70,7 +72,7 @@ describe 'SquareTable' do
   end
 
   describe '#position_to_s' do
-    before { table.place(1,1) }
+    before { table.place(valid_position) }
     it 'displays coordinate in x,y format' do
         expect(table.position_to_s).to eq '1,1'
     end
