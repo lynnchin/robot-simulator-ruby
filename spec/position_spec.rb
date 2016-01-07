@@ -16,17 +16,29 @@ describe 'Position' do
     end
   end
 
-  describe '#validate_coordinates' do
-    context 'when input (x,y) coordinates are out of table range' do
-      it 'raises an error' do
-        expect { subject.validate_coordinates(5, 6, 5) }.to raise_error(RuntimeError)
-      end
+  describe '#update' do
+    it 'moves x-coordinate forward 1 unit' do
+      subject.update(1, 0)
+      expect(subject.x_coordinate).to eq 1
+      expect(subject.y_coordinate).to eq 0
     end
 
-    context 'when input (x,y) coordinates within table range' do
-      it 'does not raise an error' do
-        expect(subject.validate_coordinates(5, 4, 5)).to eq nil
-      end
+    it 'moves x-coordinate backward by 1 unit' do
+      subject.update(-1, 0)
+      expect(subject.x_coordinate).to eq -1
+      expect(subject.y_coordinate).to eq 0
+    end
+
+    it 'moves y-coordinate forward 1 unit' do
+      subject.update(0, 1)
+      expect(subject.x_coordinate).to eq 0
+      expect(subject.y_coordinate).to eq 1
+    end
+
+    it 'moves x-coordinate backward by 1 unit' do
+      subject.update(0, -1)
+      expect(subject.x_coordinate).to eq 0
+      expect(subject.y_coordinate).to eq -1
     end
   end
 end
