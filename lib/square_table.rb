@@ -22,6 +22,11 @@ class SquareTable
     end
   end
 
+  def valid_change_in_position (change_position)
+    new_position = Position.new change_position.x_coordinate+@position.x_coordinate, change_position.y_coordinate+@position.y_coordinate
+    valid_position new_position
+  end
+
   def position_to_s
     @position.to_s
   end

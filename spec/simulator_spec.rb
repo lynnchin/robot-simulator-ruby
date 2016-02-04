@@ -22,7 +22,7 @@ describe 'Simulator' do
     end
 
     it 'has a robot' do
-      expect(simulator.robot).to be_a Robot
+      expect(simulator.current_robot).to be_a Robot
     end
   end
 
@@ -118,25 +118,25 @@ describe 'Simulator' do
       end
       it 'change the direction to west' do
         simulator.execute('LEFT')
-        expect(simulator.robot.orientation).to eq :west
+        expect(simulator.current_robot.orientation).to eq :west
       end
 
       it 'change the direction to south' do
-        simulator.robot.update_direction :west
+        simulator.current_robot.update_direction :west
         simulator.execute('LEFT')
-        expect(simulator.robot.orientation).to eq :south
+        expect(simulator.current_robot.orientation).to eq :south
       end
 
       it 'change the direction to east' do
-        simulator.robot.update_direction :south
+        simulator.current_robot.update_direction :south
         simulator.execute('LEFT')
-        expect(simulator.robot.orientation).to eq :east
+        expect(simulator.current_robot.orientation).to eq :east
       end
 
       it 'change the direction to south' do
-        simulator.robot.update_direction :east
+        simulator.current_robot.update_direction :east
         simulator.execute('LEFT')
-        expect(simulator.robot.orientation).to eq :north
+        expect(simulator.current_robot.orientation).to eq :north
       end
     end
   end
@@ -148,25 +148,25 @@ describe 'Simulator' do
       end
       it 'change the direction to east' do
         simulator.execute('RIGHT')
-        expect(simulator.robot.orientation).to eq :east
+        expect(simulator.current_robot.orientation).to eq :east
       end
 
       it 'change the direction to south' do
-        simulator.robot.update_direction :east
+        simulator.current_robot.update_direction :east
         simulator.execute('RIGHT')
-        expect(simulator.robot.orientation).to eq :south
+        expect(simulator.current_robot.orientation).to eq :south
       end
 
       it 'change the direction to east' do
-        simulator.robot.update_direction :south
+        simulator.current_robot.update_direction :south
         simulator.execute('RIGHT')
-        expect(simulator.robot.orientation).to eq :west
+        expect(simulator.current_robot.orientation).to eq :west
       end
 
       it 'change the direction to south' do
-        simulator.robot.update_direction :west
+        simulator.current_robot.update_direction :west
         simulator.execute('RIGHT')
-        expect(simulator.robot.orientation).to eq :north
+        expect(simulator.current_robot.orientation).to eq :north
       end
     end
   end
